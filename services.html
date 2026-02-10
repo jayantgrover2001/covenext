@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Covenext</title>
+    <meta name="description" content="Marketing and development services for local businesses">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Covenext</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/work.html" class="nav-link">Work</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/contact.html" class="nav-link nav-link-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 class="hero-title fade-in-up">
+                    Our <span class="gradient-text">Services</span>
+                </h1>
+                <p class="hero-description fade-in-up delay-1">
+                    Comprehensive digital solutions to help your local business grow
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: var(--spacing-4xl) 0;">
+        <div class="container">
+            <div id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title reveal-text">Ready to get started?</h2>
+                <p class="cta-description">Let's discuss which services are right for your business</p>
+                <a href="/contact.html" class="btn btn-primary btn-large">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Covenext</h3>
+                    <p class="footer-description">Helping local businesses grow through digital excellence</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="tel:+917222804021">+91 7222804021</a></li>
+                        <li><a href="mailto:hello@covenext.com">hello@covenext.com</a></li>
+                        <li style="margin-top: var(--spacing-sm); line-height: 1.6;">201, Plot No 66, Sector
+                            71<br>Mohali, Punjab 160071</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Covenext. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { servicesData } from './scripts/data.js';
+
+        const grid = document.getElementById('servicesGrid');
+        grid.innerHTML = `
+      <div class="services-grid">
+        ${servicesData.map(service => `
+          <div class="service-card" onclick="window.location.href='/service.html?id=${service.id}'">
+            <div class="service-icon">${service.icon}</div>
+            <h3>${service.title}</h3>
+            <p>${service.shortDescription}</p>
+            <a href="/service.html?id=${service.id}" class="service-link">Learn more →</a>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    </script>
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>

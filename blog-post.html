@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post - Covenext</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Covenext</a>
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/work.html" class="nav-link">Work</a></li>
+        <li><a href="/services.html" class="nav-link">Services</a></li>
+        <li><a href="/blog.html" class="nav-link">Blog</a></li>
+        <li><a href="/contact.html" class="nav-link nav-link-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article style="padding-top: 120px; padding-bottom: var(--spacing-4xl);">
+    <div class="container">
+      <div style="margin-bottom: var(--spacing-xl);">
+        <a href="/blog.html" style="color: var(--color-primary); font-weight: 600;">&larr; Back to Blog</a>
+      </div>
+      <div id="blogPostContent"></div>
+    </div>
+  </article>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Need help with your digital strategy?</h2>
+        <p class="cta-description">Let's discuss how we can help your business grow</p>
+        <a href="/contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-logo">Covenext</h3>
+          <p class="footer-description">Helping local businesses grow through digital excellence</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/work.html">Work</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms & Conditions</a></li>
+            <li><a href="/faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="tel:+917222804021">+91 7222804021</a></li>
+            <li><a href="mailto:hello@covenext.com">hello@covenext.com</a></li>
+            <li style="margin-top: var(--spacing-sm); line-height: 1.6;">201, Plot No 66, Sector 71<br>Mohali, Punjab
+              160071</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Covenext. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { blogPosts } from './scripts/data.js';
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = parseInt(urlParams.get('id'));
+    const post = blogPosts.find(p => p.id === postId);
+
+    if (post) {
+      document.title = `${post.title} - Covenext Blog`;
+      document.getElementById('blogPostContent').innerHTML = `
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div style="margin-bottom: var(--spacing-lg);">
+            <span class="project-tag">${post.category}</span>
+          </div>
+          
+          <h1 style="font-size: var(--font-size-5xl); margin-bottom: var(--spacing-lg); line-height: 1.2;">
+            ${post.title}
+          </h1>
+          
+          <div style="display: flex; gap: var(--spacing-lg); margin-bottom: var(--spacing-3xl); color: var(--color-text-secondary); flex-wrap: wrap;">
+            <span>By ${post.author}</span>
+            <span>•</span>
+            <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            <span>•</span>
+            <span>${post.readTime}</span>
+          </div>
+          
+          <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end)); border-radius: var(--radius-xl); margin-bottom: var(--spacing-3xl); display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+            📝
+          </div>
+          
+          <div style="font-size: var(--font-size-lg); line-height: 1.8; color: var(--color-text-secondary);">
+            <p style="margin-bottom: var(--spacing-xl); font-size: var(--font-size-xl); color: var(--color-text); font-weight: 500;">
+              ${post.excerpt}
+            </p>
+            
+            <p style="margin-bottom: var(--spacing-lg);">
+              In today's competitive digital landscape, local businesses need to leverage every advantage to stand out from the competition. This comprehensive guide will walk you through the essential strategies and tactics that actually deliver results.
+            </p>
+            
+            <h2 style="color: var(--color-text); margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-lg);">Understanding the Landscape</h2>
+            
+            <p style="margin-bottom: var(--spacing-lg);">
+              The digital marketing landscape is constantly evolving, with new trends and technologies emerging regularly. However, certain fundamental principles remain constant and continue to drive success for local businesses.
+            </p>
+            
+            <p style="margin-bottom: var(--spacing-lg);">
+              By focusing on these core strategies and implementing them consistently, you can build a strong online presence that attracts and converts local customers effectively.
+            </p>
+            
+            <h2 style="color: var(--color-text); margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-lg);">Key Takeaways</h2>
+            
+            <ul style="margin-bottom: var(--spacing-lg); padding-left: var(--spacing-xl);">
+              <li style="margin-bottom: var(--spacing-sm);">Focus on delivering value to your local community</li>
+              <li style="margin-bottom: var(--spacing-sm);">Optimize for mobile-first experiences</li>
+              <li style="margin-bottom: var(--spacing-sm);">Maintain consistency across all digital channels</li>
+              <li style="margin-bottom: var(--spacing-sm);">Track metrics and adjust based on data</li>
+              <li>Build genuine relationships with customers</li>
+            </ul>
+            
+            <p style="margin-bottom: var(--spacing-lg);">
+              Implementing these strategies takes time and effort, but the results are well worth it. If you need help developing and executing a comprehensive digital strategy for your local business, we're here to help.
+            </p>
+          </div>
+        </div>
+      `;
+    } else {
+      document.getElementById('blogPostContent').innerHTML = '<p>Blog post not found</p>';
+    }
+  </script>
+  <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>

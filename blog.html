@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Covenext</title>
+    <meta name="description" content="Digital marketing and web development insights">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Covenext</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/work.html" class="nav-link">Work</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/contact.html" class="nav-link nav-link-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 class="hero-title fade-in-up">
+                    Our <span class="gradient-text">Blog</span>
+                </h1>
+                <p class="hero-description fade-in-up delay-1">
+                    Insights and tips to help your business grow in the digital world
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: var(--spacing-4xl) 0;">
+        <div class="container">
+            <div id="blogGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--spacing-xl);">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Covenext</h3>
+                    <p class="footer-description">Helping local businesses grow through digital excellence</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="tel:+917222804021">+91 7222804021</a></li>
+                        <li><a href="mailto:hello@covenext.com">hello@covenext.com</a></li>
+                        <li style="margin-top: var(--spacing-sm); line-height: 1.6;">201, Plot No 66, Sector
+                            71<br>Mohali, Punjab 160071</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Covenext. All rights reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { blogPosts } from './scripts/data.js';
+
+        const grid = document.getElementById('blogGrid');
+        grid.innerHTML = blogPosts.map(post => `
+      <article class="project-card" onclick="window.location.href='/blog-post.html?id=${post.id}'" style="cursor: pointer;">
+        <div class="project-image" style="background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end)); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+          📝
+        </div>
+        <div class="project-content">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm); flex-wrap: wrap; gap: var(--spacing-sm);">
+            <span class="project-tag">${post.category}</span>
+            <span style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">${post.readTime}</span>
+          </div>
+          <h3 class="project-title">${post.title}</h3>
+          <p class="project-description">${post.excerpt}</p>
+          <div style="margin-top: var(--spacing-md); font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+            By ${post.author} • ${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </div>
+        </div>
+      </article>
+    `).join('');
+    </script>
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>

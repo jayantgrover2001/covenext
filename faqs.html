@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Covenext</title>
+    <meta name="description" content="Frequently asked questions about our services">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .faq-item {
+            background: var(--color-card-bg);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-md);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform var(--transition-fast);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Covenext</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/work.html" class="nav-link">Work</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/contact.html" class="nav-link nav-link-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 40vh;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 class="hero-title fade-in-up">
+                    <span class="gradient-text">FAQs</span>
+                </h1>
+                <p class="hero-description fade-in-up delay-1">
+                    Common questions about our services and how we work
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: var(--spacing-4xl) 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What services do you offer?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We specialize in digital marketing and web development for local businesses. Our services
+                        include local SEO, Google Business Profile optimization, Google Ads management, custom website
+                        development, e-commerce solutions, and ongoing digital strategy consulting.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The timeline varies depending on the service. For paid advertising like Google Ads, you can see
+                        results within weeks. SEO and organic strategies typically take 3-6 months to show significant
+                        results. Website development projects usually take 4-8 weeks depending on complexity.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What makes you different from other agencies?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We focus exclusively on local businesses and understand the unique challenges you face. We
+                        combine technical expertise with local market knowledge, and we're committed to being your
+                        long-term partner, not just another vendor. Every strategy is customized to your specific market
+                        and business goals.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you require long-term contracts?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        For ongoing services like SEO and marketing management, we typically recommend a minimum 6-month
+                        commitment to see meaningful results. However, we're flexible and can discuss options that work
+                        for your business. One-time projects like website development don't require long-term contracts.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much do your services cost?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Pricing varies based on your specific needs and goals. SEO services start at $999/month, website
+                        development starts at $2,999, and Google Ads management starts at $599/month plus ad spend. We
+                        offer custom quotes based on your requirements and can work within various budgets.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will I own my website?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! When we build your website, you own all the code, content, and assets. We'll provide
+                        you with all login credentials and documentation. You're never locked into working with us,
+                        though we hope you'll stay because of the value we provide.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide ongoing support?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We offer ongoing support and maintenance packages for all our services. For marketing
+                        services, we provide regular reports and strategy updates. For websites, we offer maintenance
+                        plans that include updates, backups, security monitoring, and technical support.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What industries do you work with?</span>
+                        <span class="faq-icon"
+                            style="font-size: var(--font-size-2xl); color: var(--color-primary);">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We work with a wide range of local businesses including restaurants, HVAC companies, medical
+                        practices, legal firms, retail stores, home services, and more. If you serve a local market, we
+                        can help you grow your digital presence.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title reveal-text">Still have questions?</h2>
+                <p class="cta-description">We're here to help. Get in touch and let's talk.</p>
+                <a href="/contact.html" class="btn btn-primary btn-large">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Covenext</h3>
+                    <p class="footer-description">Helping local businesses grow through digital excellence</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="tel:+917222804021">+91 7222804021</a></li>
+                        <li><a href="mailto:hello@covenext.com">hello@covenext.com</a></li>
+                        <li style="margin-top: var(--spacing-sm); line-height: 1.6;">201, Plot No 66, Sector
+                            71<br>Mohali, Punjab 160071</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Covenext. All rights reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>
